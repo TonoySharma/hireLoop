@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@heroui/react";
+import NavLink from "./NavLink";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,32 +36,32 @@ const NavBar = () => {
         <div className="flex items-center gap-8">
 
           {/* Desktop Nav Links */}
-          <ul className="hidden items-center gap-1 md:flex">
+          <ul className="hidden items-center gap-5 font-semibold md:flex">
             <li>
-              <Link
+              <NavLink
                 href="#"
                 className="block rounded-md px-3 py-1.5 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100 hover:text-gray-900 no-underline"
               >
                 Browse Jobs
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link
+              <NavLink
                 href="#"
                 className="block rounded-md px-3 py-1.5 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100 hover:text-gray-900 no-underline"
               >
                 Company
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link
+              <NavLink
                 href="#"
                 className="block rounded-md px-3 py-1.5 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100 hover:text-gray-900 no-underline"
               >
                 Pricing
-              </Link>
+              </NavLink>
             </li>
           </ul>
 
@@ -125,44 +126,44 @@ const NavBar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="flex flex-col gap-1 border-t border-gray-200 px-5 pb-4 pt-3 md:hidden">
-          <Link
+          <NavLink
             href="#"
             className="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100 hover:text-gray-900 no-underline"
           >
             Browse Jobs
-          </Link>
+          </NavLink>
 
-          <Link
+          <NavLink
             href="#"
             className="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100 hover:text-gray-900 no-underline"
           >
             Company
-          </Link>
+          </NavLink>
 
-          <Link
+          <NavLink
             href="#"
             className="block rounded-lg px-3 py-2.5 text-sm font-medium text-gray-500 transition-all hover:bg-gray-100 hover:text-gray-900 no-underline"
           >
             Pricing
-          </Link>
+          </NavLink>
 
           <div className="my-2 h-px bg-gray-200" />
 
-          <Link href="/login" className="w-full">
+          <NavLink href="/login" className="w-full">
             <Button
               className="cursor-pointer rounded-lg bg-sky-500 px-4 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-sky-600"
             >
               Log In
             </Button>
-          </Link>
+          </NavLink>
 
-          <Link href="/register" className="w-full">
+          <NavLink href="/register" className="w-full">
             <Button
               className="cursor-pointer rounded-lg bg-sky-500 px-4 py-2.5 text-center text-sm font-medium text-white transition-all hover:bg-sky-600"
             >
               Get Started →
             </Button>
-          </Link>
+          </NavLink>
         </div>
       )}
     </nav>

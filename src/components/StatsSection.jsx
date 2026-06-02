@@ -35,7 +35,7 @@ export default function StatsSection() {
   return (
     <section
       className="relative min-h-[600px] w-full flex flex-col items-center justify-center px-4
-       py-16 bg-black overflow-hidden bg-cover bg-center bg-no-repeat mb-10"
+       py-16 bg-black overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/globe.png')", 
       }}>
