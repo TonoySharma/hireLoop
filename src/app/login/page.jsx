@@ -36,7 +36,7 @@ const SignUpPage = () => {
       password: userData.password, // required
 
     })
-    console.log(data, error , "signup register")
+    // console.log(data, error , "signup register")
     if (!error) {
       router.push('/')
     }
@@ -144,7 +144,7 @@ const SignUpPage = () => {
                              hover:bg-gray-700 hover:text-white border border-gray-300
                     transition-all duration-200">
                 <Check />
-                Register
+               Login  account
               </Button>
             </Link>
             <hr></hr>
