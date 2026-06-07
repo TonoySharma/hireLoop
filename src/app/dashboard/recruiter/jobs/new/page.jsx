@@ -13,12 +13,13 @@ import {
     ListBox,
     Switch,
     Button,
-    toast
+
 } from "@heroui/react";
 import { Briefcase, Globe } from "@gravity-ui/icons";
 import FadeUp from "@/components/FadeUp";
-// import { createJob } from "@/lib/actions/jobs";
-// import { redirect } from "next/navigation";
+import { createJob } from "@/lib/actions/jobs";
+import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function PostJobPage() {
     // Mock configuration for recruiter's authenticated state
@@ -54,7 +55,7 @@ export default function PostJobPage() {
         if (!data.requirements) newErrors.requirements = "Requirements are required";
 
         console.log("Validation errors:", newErrors);
-        
+
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
@@ -72,13 +73,13 @@ export default function PostJobPage() {
 
         console.log("Submitting job with payload:", payload);
 
-        // const res = await createJob(payload);
-        // if (res.insertedId) {
-        //     toast.success("Job posted successfully!");
-        //     e.target.reset();
-        //     setIsRemote(false);
-        //     redirect("/dashboard/recruiter/jobs");
-        // }
+        const res = await createJob(payload);
+        if (res.insertedId) {
+            toast.success("Job posted successfully!");
+            e.target.reset();
+            setIsRemote(false);
+            redirect("/dashboard/recruiter/jobs");
+        }
     };
 
     // Dark styles styled to match your image_988c20.png reference layout
@@ -135,13 +136,13 @@ export default function PostJobPage() {
 
                     {/* SECTION 1: Job Information */}
                     <Fieldset className="space-y-6 w-full">
-                        <legend className="text-lg font-medium text-black border-b border-zinc-900 w-full pb-2 mb-2">
+                        <legend className="text-lg font-medium text-black border-b border-zinc-900 w-full py-4 mb-2">
                             Job Information
                         </legend>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <TextField name="jobTitle" isInvalid={!!errors.jobTitle} className="flex flex-col gap-1 w-full">
-                                <Label className="text-zinc-500 font-medium text-sm">Job Title</Label>
+                                <Label className="text-zinc-500 font-medium text-sm ">Job Title</Label>
                                 <Input placeholder="e.g. Senior Frontend Engineer" className={textInputClass} />
                                 {errors.jobTitle && <FieldError className="text-xs text-danger mt-1">{errors.jobTitle}</FieldError>}
                             </TextField>
@@ -255,7 +256,7 @@ export default function PostJobPage() {
 
                     {/* SECTION 2: Job Description */}
                     <Fieldset className="space-y-6 w-full">
-                        <legend className="text-lg font-medium text-zinc-300 border-b border-zinc-900 w-full pb-2 mb-2">
+                        <legend className="text-lg font-medium py-3 text-gray-500 border-b border-zinc-900 w-full pb-2 mb-2">
                             Job Details & Description
                         </legend>
 
@@ -294,13 +295,15 @@ export default function PostJobPage() {
                         <Button
                             type="button"
                             variant="bordered"
-                            className=" text-black border font-semibold bg-sky-500 rounded-lg px-6 transition-colors h-11"
+                            className=" text-black border font-semibold border-sky-300 hover:bg-sky-400 hover:text-white duration-300 transition-all
+                             rounded px-6 h-11"
                         >
                             Cancel
                         </Button>
                         <Button
                             type="submit"
-                            className=" text-black border font-semibold bg-sky-500 rounded-lg px-6 transition-colors h-11"
+                            className=" text-black border font-semibold border-sky-300 bg-white hover:bg-sky-400 hover:text-white duration-300 transition-all
+                             rounded px-6 h-11"
                         >
                             Post Job
                         </Button>

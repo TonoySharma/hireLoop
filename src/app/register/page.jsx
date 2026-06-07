@@ -28,12 +28,13 @@ const SignUpPage = () => {
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
     // console.log(userData);
+  
 
     const { data, error } = await signUp.email({
       name: userData.name, // required
       email: userData.email, // required
       password: userData.password, // required
-
+      role: userData.role // optional, default is "seeker"
     })
     // console.log(data, error, " register")
     if (!error) {
