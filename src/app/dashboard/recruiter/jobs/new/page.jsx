@@ -84,47 +84,47 @@ export default function PostJobPage() {
 
     // Dark styles styled to match your image_988c20.png reference layout
     const textInputClass =
-        "w-full text-black bg-[#1c1c1e] border border-zinc-800 hover:bg-[#242426] focus:border-zinc-600 rounded-lg h-12 px-3 text-sm placeholder:text-black outline-none transition-all";
+        "w-full text-black border border-zinc-200  focus:border-zinc-600 rounded h-12 px-3 text-sm placeholder:text-black outline-none transition-all";
     const textAreaClass =
-        "w-full text-black bg-[#1c1c1e] border border-zinc-800 hover:bg-[#242426] focus:border-zinc-600 rounded-lg p-3 text-sm placeholder:text-black outline-none transition-all";
+        "w-full text-black border border-zinc-200  focus:border-zinc-600 rounded p-3 text-sm placeholder:text-black outline-none transition-all";
     const selectBoxClass = "w-full";
     const triggerClasses =
-        "w-full flex items-center justify-between bg-[#1c1c1e] border border-zinc-800 hover:bg-[#242426] h-12 rounded-lg px-3 text-black transition-all text-sm outline-none";
-    const popoverClasses = "bg-[#1c1c1e] border border-zinc-800 text-black rounded-lg shadow-xl p-1";
-    const listItemClasses = "flex items-center justify-between p-2 rounded-md hover:bg-zinc-800 cursor-pointer text-sm text-zinc-200 outline-none data-[focused=true]:bg-zinc-800";
+        "w-full flex items-center justify-between  border border-zinc-200  h-12 rounded px-3 text-black transition-all text-sm outline-none";
+    const popoverClasses = " border border-zinc-200 text-black rounded shadow-xl p-1";
+    const listItemClasses = "flex items-center justify-between p-2 rounded-md cursor-pointer text-sm text-black outline-none data-[focused=true]:bg-gray-200";
 
     return (
-        <FadeUp className="min-h-screen bg-[#0d0d0e]  py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto bg-[#121214] border border-zinc-900 rounded-xl p-8 shadow-2xl">
+        <FadeUp className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto bg-gray-100 border border-gray-200 rounded-xl p-8 shadow">
 
                 {/* Form Header block */}
-                <div className="border-b border-zinc-800 pb-6 mb-8">
-                    <h1 className="text-2xl font-semibold tracking-tight">Post a New Job</h1>
+                <div className="border-b border-zinc-400 pb-6 mb-8">
+                    <h1 className="text-3xl font-semibold tracking-tight">Post a New Job</h1>
                     <p className="text-zinc-800 text-sm mt-1 font-medium">
                         Fill out the details below to publish your open position.
                     </p>
 
                     {/* Company verification status panel */}
-                    <div className="mt-4 flex items-center justify-between rounded-xl border border-zinc-800 bg-gradient-to-r from-zinc-900/80 to-zinc-950 px-4 py-3">
+                    <div className="mt-4 flex items-center justify-between rounded border bg-gray-200 px-4 py-3">
                         <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
                                 <Briefcase size={18} className="text-zinc-300" />
                             </div>
 
                             <div className="flex items-center gap-1">
-                                <p className="text-xs text-zinc-500">
+                                <p className="text-xs text-zinc-700">
                                     Posting as
                                 </p>
 
-                                <h3 className="text-sm font-semibold text-white">
+                                <h3 className="text-sm font-semibold text-black">
                                     {mockCompany.name}
                                 </h3>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2">
-                            <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-xs font-medium text-emerald-400">
+                        <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2">
+                            <div className="h-2 w-2 rounded-full bg-emerald-600 animate-pulse" />
+                            <span className="text-xs font-medium text-emerald-500">
                                 Approved
                             </span>
                         </div>
@@ -136,7 +136,7 @@ export default function PostJobPage() {
 
                     {/* SECTION 1: Job Information */}
                     <Fieldset className="space-y-6 w-full">
-                        <legend className="text-lg font-medium text-black border-b border-zinc-900 w-full py-4 mb-2">
+                        <legend className="text-lg font-medium text-black border-b border-zinc-400 w-full py-4 mb-2">
                             Job Information
                         </legend>
 
@@ -256,7 +256,7 @@ export default function PostJobPage() {
 
                     {/* SECTION 2: Job Description */}
                     <Fieldset className="space-y-6 w-full">
-                        <legend className="text-lg font-medium py-3 text-gray-500 border-b border-zinc-900 w-full pb-2 mb-2">
+                        <legend className="text-lg font-medium py-3 text-gray-500 border-b border-zinc-400  w-full pb-2 mb-2">
                             Job Details & Description
                         </legend>
 
@@ -291,7 +291,7 @@ export default function PostJobPage() {
                     </Fieldset>
 
                     {/* Form Actions */}
-                    <div className="flex justify-end gap-3 pt-4 border-t border-zinc-800 w-full">
+                    <div className="flex justify-end gap-3 pt-4 border-t border-zinc-400  w-full">
                         <Button
                             type="button"
                             variant="bordered"
@@ -302,7 +302,7 @@ export default function PostJobPage() {
                         </Button>
                         <Button
                             type="submit"
-                            className=" text-black border font-semibold border-sky-300 bg-white hover:bg-sky-400 hover:text-white duration-300 transition-all
+                            className=" text-black border font-semibold border-sky-300  hover:bg-sky-400 hover:text-white duration-300 transition-all
                              rounded px-6 h-11"
                         >
                             Post Job
